@@ -69,12 +69,10 @@ ${form.message || "I'd like a consultation."}`
             Free Consultation
           </span>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
-            Let's build your next win
+              Let's Build Your Business for Success
           </h2>
           <p className="mt-4 text-slate-600 dark:text-slate-300">
-            Tell us what you need — a website, CAC registration, Google Business
-            setup, importation coaching, or flights. We'll get back to you
-            within hours.
+            Tell us what you need — website development, CAC registration, Google Business Profile, digital marketing, travel services, or importation coaching. We'll recommend the right solution and get back to you shortly..
           </p>
         </div>
 
@@ -140,7 +138,7 @@ ${form.message || "I'd like a consultation."}`
               className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-500 to-cyan-600 px-6 py-3.5 text-sm font-bold text-white shadow-xl shadow-emerald-600/25 transition hover:brightness-110 disabled:opacity-60"
             >
               <WhatsappLogo size={18} weight="fill" />
-              {sending ? "Connecting…" : "Send via WhatsApp"}
+                {sending ? "Connecting…" : "Let's Build Your Business for Success"}
             </button>
             <p className="mt-3 text-center text-[11px] text-slate-400 dark:text-slate-500">
               Your enquiry opens directly in WhatsApp — no forms lost, fastest reply.
