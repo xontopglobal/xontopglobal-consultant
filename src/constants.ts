@@ -2,9 +2,7 @@ import type { CACPackage, FlightRoute, HotelListing, Service, VisaCountry } from
 
 export const BRAND_NAME = "Xontopglobal Consultant";
 export const EMAIL = "xontopglobal@gmail.com";
-export const PHONE_DISPLAY = "+234 803 749 0042";
-export const PHONE_TEL = "+2348037490042";
-export const WHATSAPP_LINK = "https://wa.me/2348037490042";
+export const WHATSAPP_LINK = "https://wa.me/2348162965913";
 export const WHATSAPP_TEXT =
   "Hello Xontopglobal Consultant! I found you through your website and I'd love to make an enquiry.";
 

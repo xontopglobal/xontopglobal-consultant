@@ -14,8 +14,6 @@ import {
   BRAND_NAME,
   CAC_PACKAGES,
   EMAIL,
-  PHONE_DISPLAY,
-  PHONE_TEL,
   WHATSAPP_LINK,
 } from "../constants";
 import type { ChatMessage } from "../types";
@@ -79,7 +77,7 @@ const KB: KBEntry[] = [
   },
   {
     match: ["contact", "email", "phone", "number", "reach", "whatsapp", "talk", "human", "agent"],
-    text: `You can reach us anytime: WhatsApp/call ${PHONE_DISPLAY}, or email ${EMAIL}. Our team replies fast, every day.`,
+    text: `You can reach us anytime: WhatsApp/call $ or email ${EMAIL}. Our team replies fast, every day.`,
     card: "contact",
     actions: ["Open WhatsApp", "Send email"],
   },
@@ -429,13 +427,6 @@ function ContactCard() {
         className="flex items-center gap-2 rounded-lg bg-emerald-600 px-3 py-2 text-xs font-bold text-white transition hover:bg-emerald-500"
       >
         <WhatsappLogo size={14} weight="fill" /> WhatsApp us
-      </a>
-      <a
-        href={`tel:${PHONE_TEL}`}
-        className="flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-2 text-xs font-bold text-slate-700 transition hover:border-emerald-400 dark:border-white/10 dark:text-slate-200"
-      >
-        <PhoneCall size={14} weight="fill" className="text-emerald-600 dark:text-emerald-400" />
-        +234 803 749 0042
       </a>
       <a
         href={`mailto:${EMAIL}`}

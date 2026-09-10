@@ -1,20 +1,19 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  GithubLogo,
-  List,
-  PhoneCall,
-  Sparkle,
-  WhatsappLogo,
+      GithubLogo,
+      List,
+      Sparkle,
+      WhatsappLogo,
   X,
 } from "@phosphor-icons/react";
 import {
-  BRAND_NAME,
-  NAV_LINKS,
-  PHONE_TEL,
-  WHATSAPP_LINK,
-  WHATSAPP_TEXT,
-} from "../constants";
+    BRAND_NAME,
+    NAV_LINKS,
+    WHATSAPP_LINK,
+    WHATSAPP_TEXT,
+  } from "../constants";
+
 
 interface NavbarProps {
   onConsult: () => void;
@@ -58,11 +57,11 @@ export default function Navbar({ onConsult, onDeployGuide }: NavbarProps) {
 
         <div className="hidden items-center gap-3 lg:flex">
           <a
-            href={`tel:${PHONE_TEL}`}
+    
             className="grid h-10 w-10 place-items-center rounded-full border border-slate-200 text-slate-600 transition hover:border-emerald-500 hover:text-emerald-600 dark:border-white/15 dark:text-slate-300 dark:hover:border-emerald-400 dark:hover:text-emerald-400"
             aria-label="Call Xontopglobal Consultant"
           >
-            <PhoneCall size={18} weight="bold" />
+            
           </a>
           <a
             href={`${WHATSAPP_LINK}?text=${encodeURIComponent(WHATSAPP_TEXT)}`}

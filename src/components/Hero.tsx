@@ -9,7 +9,7 @@ import {
   ShieldCheck,
   WhatsappLogo,
 } from "@phosphor-icons/react";
-import { BRAND_NAME, PHONE_TEL, QUOTE_PRESETS, SERVICES, SERVICE_IMAGES, WHATSAPP_LINK } from "../constants";
+import { BRAND_NAME, QUOTE_PRESETS, SERVICES, SERVICE_IMAGES, WHATSAPP_LINK } from "../constants";
 
 const STATS = [
   { value: "350+", label: "Projects delivered" },
@@ -98,7 +98,7 @@ export default function Hero() {
               />
             </a>
             <a
-              href={`https://wa.me/2348037490042?text=${encodeURIComponent(`Hello ${BRAND_NAME}! I'd like a consultation.`)}`}
+              href={`https://wa.me/2348162965913?text=${encodeURIComponent(`Hello ${BRAND_NAME}! I'd like a consultation.`)}`}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3.5 text-sm font-bold text-slate-700 transition hover:border-emerald-500 hover:text-emerald-600 dark:border-white/20 dark:text-slate-200 dark:hover:border-emerald-400 dark:hover:text-emerald-400"
@@ -106,21 +106,9 @@ export default function Hero() {
               <WhatsappLogo size={18} weight="fill" />
               Chat With Us
             </a>
-            <a
-              href={`tel:${PHONE_TEL}`}
-              className="inline-flex items-center gap-2 rounded-full px-4 py-3.5 text-sm font-bold text-slate-500 transition hover:text-emerald-600 dark:text-slate-400 dark:hover:text-emerald-400"
-            >
-              <PhoneCall size={18} weight="fill" /> {PHONE_TEL}
-            </a>
-          </motion.div>
-
-          {/* Service quick pills */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.32, ease: "easeOut" }}
-            className="mt-10"
-          >
+        
+          
+        
             <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500">
               What do you need today?
             </p>

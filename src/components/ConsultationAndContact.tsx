@@ -7,15 +7,14 @@ import {
   Code,
   Envelope,
   MapPin,
-  PhoneCall,
+  
   Sparkle,
   WhatsappLogo,
 } from "@phosphor-icons/react";
 import {
   BRAND_NAME,
   EMAIL,
-  PHONE_DISPLAY,
-  PHONE_TEL,
+  
   SERVICE_IMAGES,
   WHATSAPP_LINK,
 } from "../constants";
@@ -148,22 +147,20 @@ ${form.message || "I'd like a consultation."}`
           {/* Contact channels */}
           <div className="space-y-4">
             <motion.a
-              href={`tel:${PHONE_TEL}`}
+        
               initial={{ opacity: 0, x: 16 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.45, delay: 0.05, ease: "easeOut" }}
               className="group flex items-center gap-4 rounded-3xl border border-slate-200 bg-white p-6 transition hover:border-emerald-400 hover:shadow-lg dark:border-white/10 dark:bg-white/5 dark:hover:border-emerald-400/50"
             >
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-600 text-white shadow-lg shadow-emerald-600/25">
-                <PhoneCall size={22} weight="fill" />
-              </span>
+        
               <div className="flex-1">
                 <p className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
                   Call us directly
                 </p>
                 <p className="mt-0.5 text-lg font-extrabold text-slate-900 dark:text-white">
-                  {PHONE_DISPLAY}
+              
                 </p>
               </div>
               <ArrowRight
@@ -217,7 +214,8 @@ ${form.message || "I'd like a consultation."}`
                   WhatsApp business line
                 </p>
                 <p className="mt-0.5 text-lg font-extrabold text-slate-900 dark:text-white">
-                  {PHONE_DISPLAY}
+                  
+    
                 </p>
               </div>
               <ArrowRight
@@ -394,13 +392,8 @@ function Footer() {
             </p>
             <div className="mt-5 flex gap-2.5">
               <a
-                href={`tel:${PHONE_TEL}`}
-                className="grid h-9 w-9 place-items-center rounded-full border border-slate-200 text-slate-500 transition hover:border-emerald-500 hover:text-emerald-600 dark:border-white/15 dark:text-slate-300"
-                aria-label="Call us"
-              >
-                <PhoneCall size={16} weight="bold" />
-              </a>
-              <a
+        
+        
                 href={`mailto:${EMAIL}`}
                 className="grid h-9 w-9 place-items-center rounded-full border border-slate-200 text-slate-500 transition hover:border-cyan-500 hover:text-cyan-600 dark:border-white/15 dark:text-slate-300"
                 aria-label="Email us"
@@ -480,10 +473,7 @@ function Footer() {
             </p>
             <ul className="mt-4 space-y-3 text-sm text-slate-500 dark:text-slate-400">
               <li className="flex items-center gap-2.5">
-                <PhoneCall size={15} weight="fill" className="shrink-0 text-emerald-600 dark:text-emerald-400" />
-                <a href={`tel:${PHONE_TEL}`} className="transition hover:text-emerald-600 dark:hover:text-emerald-400">
-                  {PHONE_DISPLAY}
-                </a>
+              
               </li>
               <li className="flex items-center gap-2.5">
                 <Envelope size={15} weight="fill" className="shrink-0 text-cyan-600 dark:text-cyan-400" />
