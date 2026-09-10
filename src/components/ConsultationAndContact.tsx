@@ -157,7 +157,7 @@ ${form.message || "I'd like a consultation."}`
         
               <div className="flex-1">
                 <p className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
-                  Call us directly
+                
                 </p>
                 <p className="mt-0.5 text-lg font-extrabold text-slate-900 dark:text-white">
               
