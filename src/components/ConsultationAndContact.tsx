@@ -146,29 +146,7 @@ ${form.message || "I'd like a consultation."}`
 
           {/* Contact channels */}
           <div className="space-y-4">
-            <motion.a
-        
-              initial={{ opacity: 0, x: 16 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45, delay: 0.05, ease: "easeOut" }}
-              className="group flex items-center gap-4 rounded-3xl border border-slate-200 bg-white p-6 transition hover:border-emerald-400 hover:shadow-lg dark:border-white/10 dark:bg-white/5 dark:hover:border-emerald-400/50"
-            >
-        
-              <div className="flex-1">
-                <p className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
-                
-                </p>
-                <p className="mt-0.5 text-lg font-extrabold text-slate-900 dark:text-white">
-              
-                </p>
-              </div>
-              <ArrowRight
-                size={20}
-                weight="bold"
-                className="text-slate-300 transition group-hover:translate-x-1 group-hover:text-emerald-500 dark:text-slate-600"
-              />
-            </motion.a>
+           
 
             <motion.a
               href={`mailto:${EMAIL}`}
