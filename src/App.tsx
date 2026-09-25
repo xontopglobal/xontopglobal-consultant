@@ -5,7 +5,8 @@ import Hero from "./components/Hero";
 import ServicesBento from "./components/ServicesBento";
 import TravelBookingHub from "./components/TravelBookingHub";
 import ConsultationAndContact from "./components/ConsultationAndContact";
-import AIChatBot from "./components/AIChatBot";
+import AIChatBot from "./components/AIChatBot"
+import JumiaAffiliateBanner from "./components/JumiaAffiliateBanner";
 
 export default function App() {
   const [chatOpen, setChatOpen] = useState(false);
@@ -24,6 +25,8 @@ export default function App() {
 
       <main>
         <Hero />
+
+        <JumiaAffiliateBanner />
         <ServicesBento />
         <TravelBookingHub />
       </main>

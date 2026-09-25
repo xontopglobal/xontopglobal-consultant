@@ -3,7 +3,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
       GithubLogo,
       List,
+<<<<<<< HEAD
       Sparkle,
+=======
+>>>>>>> 5826e18 (Add Xontopglobal logo and Jumia affiliate banner)
       WhatsappLogo,
   X,
 } from "@phosphor-icons/react";
@@ -29,6 +32,7 @@ export default function Navbar({ onConsult, onDeployGuide }: NavbarProps) {
     <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/85 backdrop-blur-xl dark:border-white/10 dark:bg-[#0A192F]/85">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#top" className="flex items-center gap-2.5">
+<<<<<<< HEAD
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-600 text-white shadow-lg shadow-emerald-500/25">
             <Sparkle size={20} weight="fill" />
           </span>
@@ -41,6 +45,13 @@ export default function Navbar({ onConsult, onDeployGuide }: NavbarProps) {
               Consultant
             </span>
           </span>
+=======
+          <img
+            src="/images/xontopglobal-logo.png"
+            alt="Xontopglobal Consultant"
+            className="h-11 w-auto object-contain"
+          />
+>>>>>>> 5826e18 (Add Xontopglobal logo and Jumia affiliate banner)
         </a>
 
         <div className="hidden items-center gap-7 lg:flex">
