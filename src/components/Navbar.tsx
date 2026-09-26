@@ -38,14 +38,28 @@ export default function Navbar({
         >
           
 
-          <span className="leading-tight">
-            <span className="block text-[15px] font-extrabold tracking-tight text-slate-900">
+          <div className="group flex flex-col leading-none">
+            {/* Main Brand */}
+            <span className="text-[17px] sm:text-[19px] font-black tracking-[-0.035em] text-green-700 transition-colors group-hover:text-green-800">
               Xontopglobal
             </span>
-            <span className="block text-[12px] font-semibold tracking-wide text-slate-500">
-              CONSULTANT
+
+            {/* Consultant Accent */}
+            <div className="mt-1 flex items-center gap-1.5">
+              <span className="h-[2px] w-4 rounded-full bg-green-600" />
+
+              <span className="text-[10px] sm:text-[11px] font-extrabold tracking-[0.22em] text-red-600">
+                CONSULTANT
+              </span>
+
+              <span className="h-[2px] w-4 rounded-full bg-red-500" />
+            </div>
+
+            {/* Professional Description */}
+            <span className="mt-1.5 text-[7px] sm:text-[8px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+              Travel • Education • Business • Immigration
             </span>
-          </span>
+          </div>
         </a>
 
         {/* Desktop Navigation */}
