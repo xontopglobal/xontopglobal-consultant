@@ -38,10 +38,14 @@ export default function Navbar({
         >
           
 
-
-          <span className="text-lg font-extrabold tracking-tight">
-            Xontopglobal Consultant
-          </span> 
+          <span className="leading-tight">
+            <span className="block text-[15px] font-extrabold tracking-tight text-slate-900">
+              Xontopglobal
+            </span>
+            <span className="block text-[12px] font-semibold tracking-wide text-slate-500">
+              CONSULTANT
+            </span>
+          </span>
         </a>
 
         {/* Desktop Navigation */}
