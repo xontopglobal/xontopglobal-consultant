@@ -7,7 +7,7 @@ export const WHATSAPP_TEXT =
   "Hello Xontopglobal Consultant! I found you through your website and I'd love to make an enquiry.";
 
 export const NAV_LINKS = [
-  { label: "Services", href: "#services" },
+  { label: "Services", href: "/services" },
   { label: "CAC Registration", href: "#cac" },
   { label: "Travel Desk", href: "#travel-booking" },
   { label: "Importation Academy", href: "#import" },

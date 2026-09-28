@@ -2,11 +2,10 @@ import { useCallback, useState } from "react";
 import { Toaster } from "sonner";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import ServicesBento from "./components/ServicesBento";
-import TravelBookingHub from "./components/TravelBookingHub";
 import ConsultationAndContact from "./components/ConsultationAndContact";
 import AIChatBot from "./components/AIChatBot"
 import JumiaAffiliateBanner from "./components/JumiaAffiliateBanner";
+import BEForwardAffiliateBanner from "./components/BEForwardAffiliateBanner";
 
 export default function App() {
   const [chatOpen, setChatOpen] = useState(false);
@@ -25,7 +24,7 @@ export default function App() {
 
       <main>
         <Hero />
-
+        <BEForwardAffiliateBanner />
         <JumiaAffiliateBanner />
         {/* Travel Partner Offers */}
         <section className="mx-auto w-full max-w-7xl px-4 py-5 sm:px-6 lg:px-8">
@@ -89,8 +88,57 @@ export default function App() {
 
           </div>
         </section>
-        <ServicesBento />
-        <TravelBookingHub />
+        <section
+          id="services"
+          className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8"
+        >
+          <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 sm:p-10">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-widest text-cyan-600">
+                Featured Service
+              </p>
+
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                Website & App Development
+              </h2>
+
+              <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
+                We build professional, responsive and high-performing websites and
+                web applications for businesses, organizations and entrepreneurs.
+              </p>
+
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-xl bg-slate-50 p-4">
+                  ✓ Business & portfolio websites
+                </div>
+
+                <div className="rounded-xl bg-slate-50 p-4">
+                  ✓ E-commerce storefronts
+                </div>
+
+                <div className="rounded-xl bg-slate-50 p-4">
+                  ✓ Landing pages that convert
+                </div>
+
+                <div className="rounded-xl bg-slate-50 p-4">
+                  ✓ Web apps & dashboards
+                </div>
+
+                <div className="rounded-xl bg-slate-50 p-4 sm:col-span-2">
+                  ✓ Maintenance & hosting plans
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => scrollTo("contact")}
+                className="mt-8 rounded-full bg-cyan-600 px-6 py-3 font-semibold text-white transition hover:bg-cyan-700"
+              >
+                Start Your Web Project →
+              </button>
+            </div>
+          </div>
+        </section>
       </main>
 
       <ConsultationAndContact />
