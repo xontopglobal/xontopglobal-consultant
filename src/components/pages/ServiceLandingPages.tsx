@@ -1,4 +1,4 @@
-import TravelBookingHub from "../components/TravelBookingHub";
+import TravelBookingHub from "../TravelBookingHub";
 import { useParams } from "react-router-dom";
 import ServicePage from "./ServicePage";
 
