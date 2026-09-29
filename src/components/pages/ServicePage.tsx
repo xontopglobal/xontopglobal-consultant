@@ -5,8 +5,12 @@ import BEForwardAffiliateBanner from "../BEForwardAffiliateBanner";
 
 export default function ServicePage() {
     const { serviceId } = useParams();
-    
-    const service = SERVICES.find((item) => item.id === serviceId);
+
+    const service = SERVICES.find(
+        (item) =>
+            String(item.id).trim().toLowerCase() ===
+            String(serviceId).trim().toLowerCase()
+    );
 
     if (!service) {
         return (
