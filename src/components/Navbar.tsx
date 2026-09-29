@@ -13,7 +13,7 @@ import {
   Buildings,
   Phone,
 } from "@phosphor-icons/react";
-
+import { useNavigate } from "react-router-dom";
 import {
   BRAND_NAME,
   WHATSAPP_LINK,
@@ -25,7 +25,12 @@ interface NavbarProps {
   onDeployGuide: () => void;
 }
 
-type MenuName = "services" | "cac" | "travel" | "academy" | null;
+type MenuName =
+  | "services"
+  | "cac"
+  | "travel"
+  | "academy"
+  | null;
 
 export default function Navbar({
   onConsult,
@@ -34,6 +39,7 @@ export default function Navbar({
   const [open, setOpen] = useState(false);
   const [menu, setMenu] = useState<MenuName>(null);
   const navRef = useRef<HTMLElement>(null);
+  const navigate = useNavigate();
 
   const closeAll = () => {
     setOpen(false);
@@ -53,7 +59,10 @@ export default function Navbar({
     document.addEventListener("mousedown", handleOutsideClick);
 
     return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener(
+        "mousedown",
+        handleOutsideClick
+      );
     };
   }, []);
 
@@ -65,6 +74,12 @@ export default function Navbar({
     document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
     });
+
+    closeAll();
+  };
+
+  const goToServices = () => {
+    navigate("/services");
     closeAll();
   };
 
@@ -74,7 +89,6 @@ export default function Navbar({
         ref={navRef}
         className="mx-auto flex min-h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
       >
-
         {/* BRAND */}
         <a
           href="#top"
@@ -102,7 +116,6 @@ export default function Navbar({
 
         {/* DESKTOP NAVIGATION */}
         <div className="hidden items-center gap-1 md:flex">
-
           {/* SERVICES */}
           <div className="relative">
             <button
@@ -111,6 +124,7 @@ export default function Navbar({
               className="flex items-center gap-1 rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-green-50 hover:text-green-700"
             >
               Services
+
               <CaretDown
                 size={14}
                 weight="bold"
@@ -121,9 +135,9 @@ export default function Navbar({
 
             {menu === "services" && (
               <div className="absolute left-0 top-full mt-3 w-72 rounded-2xl border border-slate-200 bg-white p-2 shadow-2xl">
-
                 <button
-                  onClick={() => scrollTo("services")}
+                  type="button"
+                  onClick={goToServices}
                   className="flex w-full gap-3 rounded-xl p-3 text-left hover:bg-green-50"
                 >
                   <Briefcase
@@ -131,10 +145,12 @@ export default function Navbar({
                     weight="duotone"
                     className="text-green-600"
                   />
+
                   <div>
                     <p className="font-bold text-slate-900">
                       Business & Digital Services
                     </p>
+
                     <p className="text-xs text-slate-500">
                       Websites, apps, SEO and digital solutions.
                     </p>
@@ -142,7 +158,8 @@ export default function Navbar({
                 </button>
 
                 <button
-                  onClick={() => scrollTo("services")}
+                  type="button"
+                  onClick={goToServices}
                   className="flex w-full gap-3 rounded-xl p-3 text-left hover:bg-green-50"
                 >
                   <Globe
@@ -150,10 +167,12 @@ export default function Navbar({
                     weight="duotone"
                     className="text-green-600"
                   />
+
                   <div>
                     <p className="font-bold text-slate-900">
                       Travel & Immigration
                     </p>
+
                     <p className="text-xs text-slate-500">
                       Travel and visa support.
                     </p>
@@ -161,7 +180,8 @@ export default function Navbar({
                 </button>
 
                 <button
-                  onClick={() => scrollTo("services")}
+                  type="button"
+                  onClick={goToServices}
                   className="flex w-full gap-3 rounded-xl p-3 text-left hover:bg-green-50"
                 >
                   <GraduationCap
@@ -169,10 +189,12 @@ export default function Navbar({
                     weight="duotone"
                     className="text-green-600"
                   />
+
                   <div>
                     <p className="font-bold text-slate-900">
                       Training & Academy
                     </p>
+
                     <p className="text-xs text-slate-500">
                       Importation and business training.
                     </p>
@@ -182,7 +204,7 @@ export default function Navbar({
             )}
           </div>
 
-          {/* CAC */}
+          {/* CAC REGISTRATION */}
           <div className="relative">
             <button
               type="button"
@@ -190,6 +212,7 @@ export default function Navbar({
               className="flex items-center gap-1 rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-green-50 hover:text-green-700"
             >
               CAC Registration
+
               <CaretDown
                 size={14}
                 weight="bold"
@@ -200,9 +223,9 @@ export default function Navbar({
 
             {menu === "cac" && (
               <div className="absolute left-0 top-full mt-3 w-72 rounded-2xl border border-slate-200 bg-white p-2 shadow-2xl">
-
                 <button
-                  onClick={() => scrollTo("services")}
+                  type="button"
+                  onClick={goToServices}
                   className="flex w-full gap-3 rounded-xl p-3 text-left hover:bg-green-50"
                 >
                   <Buildings
@@ -210,10 +233,12 @@ export default function Navbar({
                     weight="duotone"
                     className="text-green-600"
                   />
+
                   <div>
                     <p className="font-bold text-slate-900">
                       Company Registration
                     </p>
+
                     <p className="text-xs text-slate-500">
                       Register your company with CAC.
                     </p>
@@ -221,7 +246,8 @@ export default function Navbar({
                 </button>
 
                 <button
-                  onClick={() => scrollTo("services")}
+                  type="button"
+                  onClick={goToServices}
                   className="flex w-full gap-3 rounded-xl p-3 text-left hover:bg-green-50"
                 >
                   <Briefcase
@@ -229,10 +255,12 @@ export default function Navbar({
                     weight="duotone"
                     className="text-green-600"
                   />
+
                   <div>
                     <p className="font-bold text-slate-900">
                       Business Name Registration
                     </p>
+
                     <p className="text-xs text-slate-500">
                       Start and formalize your business.
                     </p>
@@ -240,7 +268,8 @@ export default function Navbar({
                 </button>
 
                 <button
-                  onClick={() => scrollTo("services")}
+                  type="button"
+                  onClick={goToServices}
                   className="flex w-full gap-3 rounded-xl p-3 text-left hover:bg-green-50"
                 >
                   <Buildings
@@ -248,10 +277,12 @@ export default function Navbar({
                     weight="duotone"
                     className="text-green-600"
                   />
+
                   <div>
                     <p className="font-bold text-slate-900">
                       CAC Support
                     </p>
+
                     <p className="text-xs text-slate-500">
                       Professional registration assistance.
                     </p>
@@ -269,6 +300,7 @@ export default function Navbar({
               className="flex items-center gap-1 rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-cyan-50 hover:text-cyan-700"
             >
               Travel Desk
+
               <CaretDown
                 size={14}
                 weight="bold"
@@ -279,8 +311,8 @@ export default function Navbar({
 
             {menu === "travel" && (
               <div className="absolute left-0 top-full mt-3 w-72 rounded-2xl border border-slate-200 bg-white p-2 shadow-2xl">
-
                 <button
+                  type="button"
                   onClick={() => scrollTo("travel-booking")}
                   className="flex w-full gap-3 rounded-xl p-3 text-left hover:bg-cyan-50"
                 >
@@ -289,10 +321,12 @@ export default function Navbar({
                     weight="duotone"
                     className="text-cyan-600"
                   />
+
                   <div>
                     <p className="font-bold text-slate-900">
                       Flights
                     </p>
+
                     <p className="text-xs text-slate-500">
                       Domestic and international bookings.
                     </p>
@@ -300,6 +334,7 @@ export default function Navbar({
                 </button>
 
                 <button
+                  type="button"
                   onClick={() => scrollTo("travel-booking")}
                   className="flex w-full gap-3 rounded-xl p-3 text-left hover:bg-cyan-50"
                 >
@@ -308,10 +343,12 @@ export default function Navbar({
                     weight="duotone"
                     className="text-cyan-600"
                   />
+
                   <div>
                     <p className="font-bold text-slate-900">
                       Hotels
                     </p>
+
                     <p className="text-xs text-slate-500">
                       Find accommodation for your trip.
                     </p>
@@ -319,6 +356,7 @@ export default function Navbar({
                 </button>
 
                 <button
+                  type="button"
                   onClick={() => scrollTo("travel-booking")}
                   className="flex w-full gap-3 rounded-xl p-3 text-left hover:bg-cyan-50"
                 >
@@ -327,10 +365,12 @@ export default function Navbar({
                     weight="duotone"
                     className="text-cyan-600"
                   />
+
                   <div>
                     <p className="font-bold text-slate-900">
                       Visa Consultation
                     </p>
+
                     <p className="text-xs text-slate-500">
                       Visa guidance and travel documentation.
                     </p>
@@ -348,6 +388,7 @@ export default function Navbar({
               className="flex items-center gap-1 rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-green-50 hover:text-green-700"
             >
               Importation Academy
+
               <CaretDown
                 size={14}
                 weight="bold"
@@ -358,9 +399,9 @@ export default function Navbar({
 
             {menu === "academy" && (
               <div className="absolute right-0 top-full mt-3 w-72 rounded-2xl border border-slate-200 bg-white p-2 shadow-2xl">
-
                 <button
-                  onClick={() => scrollTo("services")}
+                  type="button"
+                  onClick={goToServices}
                   className="flex w-full gap-3 rounded-xl p-3 text-left hover:bg-green-50"
                 >
                   <GraduationCap
@@ -368,10 +409,12 @@ export default function Navbar({
                     weight="duotone"
                     className="text-green-600"
                   />
+
                   <div>
                     <p className="font-bold text-slate-900">
                       Digital Importation
                     </p>
+
                     <p className="text-xs text-slate-500">
                       Learn how to import products.
                     </p>
@@ -379,7 +422,8 @@ export default function Navbar({
                 </button>
 
                 <button
-                  onClick={() => scrollTo("services")}
+                  type="button"
+                  onClick={goToServices}
                   className="flex w-full gap-3 rounded-xl p-3 text-left hover:bg-green-50"
                 >
                   <Briefcase
@@ -387,10 +431,12 @@ export default function Navbar({
                     weight="duotone"
                     className="text-green-600"
                   />
+
                   <div>
                     <p className="font-bold text-slate-900">
                       Business Training
                     </p>
+
                     <p className="text-xs text-slate-500">
                       Practical entrepreneurship training.
                     </p>
@@ -413,7 +459,6 @@ export default function Navbar({
 
         {/* DESKTOP ACTIONS */}
         <div className="hidden items-center gap-2 lg:flex">
-
           <a
             href={`${WHATSAPP_LINK}?text=${encodeURIComponent(
               WHATSAPP_TEXT
@@ -465,35 +510,42 @@ export default function Navbar({
       {/* MOBILE NAVIGATION */}
       {open && (
         <div className="border-t border-slate-200 bg-white px-4 py-4 shadow-xl md:hidden">
-
+          {/* MOBILE SERVICES */}
           <button
+            type="button"
             onClick={() => toggleMenu("services")}
             className="flex w-full items-center justify-between rounded-xl px-4 py-3 font-semibold text-slate-700 hover:bg-green-50"
           >
             Services
+
             <CaretDown
-              className={menu === "services" ? "rotate-180" : ""}
+              className={
+                menu === "services" ? "rotate-180" : ""
+              }
             />
           </button>
 
           {menu === "services" && (
             <div className="ml-3 border-l-2 border-green-100 pl-3">
               <button
-                onClick={() => scrollTo("services")}
+                type="button"
+                onClick={goToServices}
                 className="block w-full rounded-lg px-3 py-2 text-left text-sm text-slate-600 hover:bg-green-50"
               >
                 Business & Digital Services
               </button>
 
               <button
-                onClick={() => scrollTo("services")}
+                type="button"
+                onClick={goToServices}
                 className="block w-full rounded-lg px-3 py-2 text-left text-sm text-slate-600 hover:bg-green-50"
               >
                 Travel & Immigration
               </button>
 
               <button
-                onClick={() => scrollTo("services")}
+                type="button"
+                onClick={goToServices}
                 className="block w-full rounded-lg px-3 py-2 text-left text-sm text-slate-600 hover:bg-green-50"
               >
                 Training & Academy
@@ -501,34 +553,42 @@ export default function Navbar({
             </div>
           )}
 
+          {/* MOBILE CAC */}
           <button
+            type="button"
             onClick={() => toggleMenu("cac")}
             className="flex w-full items-center justify-between rounded-xl px-4 py-3 font-semibold text-slate-700 hover:bg-green-50"
           >
             CAC Registration
+
             <CaretDown
-              className={menu === "cac" ? "rotate-180" : ""}
+              className={
+                menu === "cac" ? "rotate-180" : ""
+              }
             />
           </button>
 
           {menu === "cac" && (
             <div className="ml-3 border-l-2 border-green-100 pl-3">
               <button
-                onClick={() => scrollTo("services")}
+                type="button"
+                onClick={goToServices}
                 className="block w-full rounded-lg px-3 py-2 text-left text-sm text-slate-600 hover:bg-green-50"
               >
                 Company Registration
               </button>
 
               <button
-                onClick={() => scrollTo("services")}
+                type="button"
+                onClick={goToServices}
                 className="block w-full rounded-lg px-3 py-2 text-left text-sm text-slate-600 hover:bg-green-50"
               >
                 Business Name Registration
               </button>
 
               <button
-                onClick={() => scrollTo("services")}
+                type="button"
+                onClick={goToServices}
                 className="block w-full rounded-lg px-3 py-2 text-left text-sm text-slate-600 hover:bg-green-50"
               >
                 CAC Support
@@ -536,19 +596,25 @@ export default function Navbar({
             </div>
           )}
 
+          {/* MOBILE TRAVEL */}
           <button
+            type="button"
             onClick={() => toggleMenu("travel")}
             className="flex w-full items-center justify-between rounded-xl px-4 py-3 font-semibold text-slate-700 hover:bg-cyan-50"
           >
             Travel Desk
+
             <CaretDown
-              className={menu === "travel" ? "rotate-180" : ""}
+              className={
+                menu === "travel" ? "rotate-180" : ""
+              }
             />
           </button>
 
           {menu === "travel" && (
             <div className="ml-3 border-l-2 border-cyan-100 pl-3">
               <button
+                type="button"
                 onClick={() => scrollTo("travel-booking")}
                 className="block w-full rounded-lg px-3 py-2 text-left text-sm text-slate-600 hover:bg-cyan-50"
               >
@@ -556,6 +622,7 @@ export default function Navbar({
               </button>
 
               <button
+                type="button"
                 onClick={() => scrollTo("travel-booking")}
                 className="block w-full rounded-lg px-3 py-2 text-left text-sm text-slate-600 hover:bg-cyan-50"
               >
@@ -563,6 +630,7 @@ export default function Navbar({
               </button>
 
               <button
+                type="button"
                 onClick={() => scrollTo("travel-booking")}
                 className="block w-full rounded-lg px-3 py-2 text-left text-sm text-slate-600 hover:bg-cyan-50"
               >
@@ -571,27 +639,34 @@ export default function Navbar({
             </div>
           )}
 
+          {/* MOBILE ACADEMY */}
           <button
+            type="button"
             onClick={() => toggleMenu("academy")}
             className="flex w-full items-center justify-between rounded-xl px-4 py-3 font-semibold text-slate-700 hover:bg-green-50"
           >
             Importation Academy
+
             <CaretDown
-              className={menu === "academy" ? "rotate-180" : ""}
+              className={
+                menu === "academy" ? "rotate-180" : ""
+              }
             />
           </button>
 
           {menu === "academy" && (
             <div className="ml-3 border-l-2 border-green-100 pl-3">
               <button
-                onClick={() => scrollTo("services")}
+                type="button"
+                onClick={goToServices}
                 className="block w-full rounded-lg px-3 py-2 text-left text-sm text-slate-600 hover:bg-green-50"
               >
                 Digital Importation
               </button>
 
               <button
-                onClick={() => scrollTo("services")}
+                type="button"
+                onClick={goToServices}
                 className="block w-full rounded-lg px-3 py-2 text-left text-sm text-slate-600 hover:bg-green-50"
               >
                 Business Training
@@ -599,7 +674,9 @@ export default function Navbar({
             </div>
           )}
 
+          {/* MOBILE CONTACT */}
           <button
+            type="button"
             onClick={() => scrollTo("contact")}
             className="flex w-full items-center gap-2 rounded-xl px-4 py-3 font-semibold text-slate-700 hover:bg-slate-50"
           >
@@ -607,8 +684,8 @@ export default function Navbar({
             Contact
           </button>
 
+          {/* MOBILE ACTIONS */}
           <div className="mt-3 flex flex-col gap-2 border-t border-slate-100 pt-3">
-
             <a
               href={`${WHATSAPP_LINK}?text=${encodeURIComponent(
                 WHATSAPP_TEXT
